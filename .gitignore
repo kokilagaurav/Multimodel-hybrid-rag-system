@@ -32,15 +32,6 @@ data/
 *.manifest
 *.spec
 
-
-
-
-src/ingestion/json_convertor.py
-test/save_json.py
-
-
-
-
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt

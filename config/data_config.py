@@ -7,7 +7,7 @@ from config.base import PROJECT_ROOT
 
 @dataclass(frozen=True)
 class DataConfig:
-    raw_dir: Path = PROJECT_ROOT / "data" / "raw" / "sample.pdf"
+    raw_dir: Path = PROJECT_ROOT / "data" / "raw" 
     interim_dir: Path = PROJECT_ROOT / "data" / "interim"
     processed_dir: Path = PROJECT_ROOT / "data" / "processed"
     chunks_dir: Path = PROJECT_ROOT / "data" / "chunks"

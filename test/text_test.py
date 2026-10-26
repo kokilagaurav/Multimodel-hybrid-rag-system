@@ -1,10 +1,8 @@
-from pathlib import Path
-
 from src.ingestion.text_loader import text_loader
 from config.data_config import DataConfig
 
 data = DataConfig()
-file_path = data.interim_dir 
+file_path = data.interim_dir / "extracted_text.txt"
 output_path = data.interim_dir / "extracted_text2.txt"
 
 loader = text_loader()

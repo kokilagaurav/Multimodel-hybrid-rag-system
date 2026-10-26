@@ -198,12 +198,16 @@ Answer, sources, suggestions, and optional human review
 ## Development Workflow
 
 1. Place source PDFs in `data/raw/`.
-2. Run `scripts/ingest_pdfs.py` to extract and normalize source content.
-3. Run `scripts/build_index.py` to create chunks, embeddings, and search indexes.
-4. Run the evaluation scripts before changing retrieval or generation settings.
-5. Start the API with `scripts/run_api.py`.
-6. Use the frontend to submit text or image questions.
-7. Run unit, integration, and evaluation tests before contributing changes.
+2. Copy `.env.example` to `.env` and set `GLM_API_KEY` with your GLM API key.
+3. Run `python -m scripts.data_ingestion` to extract and normalize source content.
+   The generated JSON is written to `data/processed/kyoto_cultural_history.json`.
+   Its `processing.token_usage` field contains aggregate prompt, completion,
+   total-token, and request counts; each page also contains `token_usage`.
+4. Run `scripts/build_index.py` to create chunks, embeddings, and search indexes.
+5. Run the evaluation scripts before changing retrieval or generation settings.
+6. Start the API with `scripts/run_api.py`.
+7. Use the frontend to submit text or image questions.
+8. Run unit, integration, and evaluation tests before contributing changes.
 
 ## Responsible Use
 

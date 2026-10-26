@@ -4,8 +4,10 @@ from src.ingestion.pdf_loader import PDFLoader
 from config.data_config import DataConfig
 
 data = DataConfig()
-
-file_path = data.raw_dir
+pdf_files = sorted(data.raw_dir.glob("*.pdf"))
+if not pdf_files:
+    raise FileNotFoundError(f"No PDF files found in {data.raw_dir}")
+file_path = pdf_files[0]
 output_path = Path("data/interim/extracted_text.txt")
 
 

@@ -19,7 +19,6 @@ class text_loader:
             logger.info(f"Loaded {len(documents)} pages from text file: {file_path}")
 
             return documents
-        except Exception as e:
-                    logger.error(f"Error during text load for as {e}"
-                    )
-                    raise e
+        except Exception:
+            logger.exception("Error during text load for %s", file_path)
+            raise
